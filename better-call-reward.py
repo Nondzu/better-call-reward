@@ -2,34 +2,27 @@
 from asyncio import constants
 from pyclbr import Function
 import requests
-import json
 import time
 import sys
 import argparse
 from datetime import datetime
-import logging
 
 # set your Orchestrator url
-# orchUrl = 'http://192.168.137.103:7935'
 URL_DEFAULT = 'http://localhost:7935'  # default
-waitTime = 60 * 60  # check reward every 1 hour (value in second)
-waitTime = 15
 
-retryTimeOffline = 60  # delay  when O is offline in second
-retryTimeReward = 60 * 60  # time for check and call reward in second
-
-
-def my_function():
-    print("Hello from a function")
+retryTimeOffline = 60  # delay  when O is offline, in seconds
+retryTimeReward = 60 * 60  # time retry call "reward ", in seconds
 
 
 def parseArgs():
     # Instantiate the parser
-    parser = argparse.ArgumentParser(description='Optional app description')
+    parser = argparse.ArgumentParser(
+        description='Script to resolve problem with livepeer "reward" call. ')
     parser.add_argument('-url', type=str, nargs='?',
                         help='URL for your Orchestrator')
-    parser.add_argument('-delay', type=int, nargs='?',
-                        help='delay between next try of call "reward"')
+    # todo: ? add delay params
+    # parser.add_argument('-delay', type=int, nargs='?',
+    #                     help='delay between next try of call "reward"')
     # Parse the argument
     args = parser.parse_args()
     if args.url is None:
@@ -40,10 +33,8 @@ def parseArgs():
     return url
 # end  parseArgs()
 
-# check O status and get some info
 
-
-def statusOrch(url):    # /status
+def statusOrch(url):    # /status ,  check O status and get some info
     try:
         r = requests.get(url + '/status')
         responseStatus = r.status_code
@@ -53,7 +44,7 @@ def statusOrch(url):    # /status
         exit(0)
     print("Connection success")
     print("---Info---")
-    print("Version: " + r.json()['Version'])
+    print("Orchestrator Version: " + r.json()['Version'])
     print("GolangRuntimeVersion: " + r.json()['GolangRuntimeVersion'])
     print("")
 
@@ -131,12 +122,12 @@ while True:
 
         if currentRound != lastRewardRound:
             log('Call reward!')
-            r = requests.get(url + '/rewardss')  # call reward
+            r = requests.get(url + '/reward')  # call reward
             log(r)
             if r.status_code == 200:
-                log('Call reward success.')
+                log('Call to reward success.')
             else:
-                log('Call reward fail. Error: ' + str(r))
+                log('Call to reward fail. Error: ' + str(r))
 
         else:
             log('Do not call reward. ' + 'Reward for current round ' +
