@@ -21,12 +21,12 @@ optional arguments:
 ```
 
 
-#####example usage: 
+##### example usage: 
 `./better-call-reward.py  -url http://localhost:7935`
 
 `./better-call-reward.py ` - this use default url `http://localhost:7935`
 
-#####script output on succes:
+##### script output on succes:
 ```
 Orchestrator URL: http://192.168.137.103:7935
 Connection success
