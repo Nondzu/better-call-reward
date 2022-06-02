@@ -9,7 +9,7 @@ Script in default is checking numbers every 1h, you can change this value by edi
 
 My Orchestrator has many missing `reward` calls and this was the main motivation to create this script.
 
-#####help:
+#### help:
 ```
 usage: better-call-reward.py [-h] [-url [URL]] [-delay [DELAY]]
 
@@ -21,12 +21,12 @@ optional arguments:
 ```
 
 
-##### example usage: 
+#### example usage: 
 `./better-call-reward.py  -url http://localhost:7935`
 
 `./better-call-reward.py ` - this use default url `http://localhost:7935`
 
-##### script output on succes:
+#### script output on succes:
 ```
 Orchestrator URL: http://192.168.137.103:7935
 Connection success
@@ -46,7 +46,7 @@ Transcoders:
 . Next call: 3534s    
 ```
 
-example output from O:
+#### example output from O:
 ```
 I0602 10:40:35.750595  417331 handlers.go:845] Calling reward
 2022/06/02 10:41:30 http: TLS handshake error from 208.115.199.25:41434: EOF
@@ -61,7 +61,7 @@ I0602 10:42:32.508922  417331 handlers.go:855] Call to reward successful
 
 
 
-some error:
+#### some error:
 ```
 Orchestrator URL: http://192.168.137.103:7935
 Connection success
