@@ -5,7 +5,7 @@
 What this do?
 This script uses livepeer API to get info on the last reward call round and current round.
 Then compare these numbers and if they are not the same just call to `reward`. 
-Script in default is checking numbers every 1h, you can change this value by editing `retryTimeReward`
+Script in default is checking numbers every 1h. You can change this value by editing `retryTimeReward`
 
 My Orchestrator has many missing `reward` calls and this was the main motivation to create this script.
 
@@ -79,4 +79,10 @@ Transcoders:
 [ 2022-06-02 10:33:26.292445 ] <Response [404]>
 [ 2022-06-02 10:33:26.292469 ] Call to reward fail. Error: <Response [404]>
 ```
+
+Buy me a coffee:  <br />
+LPT (Arbitrum): `0xE32971e1a55152A94Fa55DFb80ACdC4bA55679C3`  <br />
+AETH (Arbitrum): `0xE32971e1a55152A94Fa55DFb80ACdC4bA55679C3` <br />
+ETH:  `0xE32971e1a55152A94Fa55DFb80ACdC4bA55679C3` <br />
+DOGE: `D8mJBFdSQscQKce2vnPsKr4dC4sFvypBfU`  <br />
 
