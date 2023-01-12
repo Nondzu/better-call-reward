@@ -1,0 +1,7 @@
+version: '3.3'
+
+services:
+  monitor: 
+    image: senseinode/scripts:livepeer-call-reward
+    network_mode: host
+    restart: always
