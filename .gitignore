@@ -27,4 +27,5 @@
 # Ignore code-workspaces
 *.code-workspace
 
+env/
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode

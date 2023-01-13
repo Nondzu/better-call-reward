@@ -79,6 +79,12 @@ Transcoders:
 [ 2022-06-02 10:33:26.292445 ] <Response [404]>
 [ 2022-06-02 10:33:26.292469 ] Call to reward fail. Error: <Response [404]>
 ```
+#### Launch using docker compose:
+1. Clone this repo and cd into it: `cd better-call-reward/`
+2. Run to launch the script `docker-compose up --build -d`
+3. Confirm that is working: `docker-compose logs -f --tail=100 script`
+
+**Note** that inside docker-compose file, the network is in host mode to be able to call localhost as the real host and not as the container. If your orchestrator is dockerized, you would need to remove this and point your Orchestrator container using the container IP or the docker compose service name.
 
 Buy me a coffee:  <br />
 LPT (Arbitrum): `0xE32971e1a55152A94Fa55DFb80ACdC4bA55679C3`  <br />
